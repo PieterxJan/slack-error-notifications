@@ -2,8 +2,6 @@
 
 Plugin used to log error in your Craft website to a channel on Slack
 
-![Screenshot](resources/img/plugin-logo.png)
-
 ## Requirements
 
 This plugin requires Craft CMS 3.0.0-beta.23 or later.
@@ -18,26 +16,10 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require /slack-error-notifications
+        composer require pieterxjan/slack-error-notifications
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Slack error notifications.
 
-## Slack error notifications Overview
-
--Insert text here-
-
-## Configuring Slack error notifications
-
--Insert text here-
-
-## Using Slack error notifications
-
--Insert text here-
-
-## Slack error notifications Roadmap
-
-Some things to do, and ideas for potential features:
-
-* Release it
+4. Finally, go to Settings → Slack error notifications and fill in your Slack Webhook URL
 
 Brought to you by [Pieter-Jan Claeysens](https://github.com/pieterxjan)
