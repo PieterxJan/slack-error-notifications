@@ -1,0 +1,8 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    first: true,
+    label: "Slack Webhook URL",
+    name: 'webhook',
+    value: settings.webhook
+}) }}
