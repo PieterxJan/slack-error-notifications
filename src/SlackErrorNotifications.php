@@ -92,9 +92,9 @@ class SlackErrorNotifications extends Plugin
 
                 $webhook = $this->getSettings()->webhook;
 
-                // if (\Craft::$app->config->getGeneral()->devMode === true) {
-                //     return;
-                // }
+                if (\Craft::$app->config->getGeneral()->devMode === true) {
+                    return;
+                }
 
                 self::$plugin->slackService->sendNotification($event->exception);
             }
