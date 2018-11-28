@@ -44,7 +44,7 @@ class SlackService extends Component
      *
      * @return mixed
      */
-    public function sendNotification(\Exception $exception)
+    public function sendNotification($exception)
     {
         $name = $_SERVER['HTTP_HOST'];
         $user = \Yii::$app->user->identity;
