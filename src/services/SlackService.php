@@ -96,4 +96,48 @@ class SlackService extends Component
         $response = curl_exec($ch);
         curl_close($ch);
     }
+
+    public function isBot($user_agent)
+    {
+        $user_agent = strtolower($user_agent);
+
+        $strings = [
+            'bot',
+            'slurp',
+            'crawler',
+            'spider',
+            'curl',
+            'facebook',
+            'fetch',
+        ];
+
+        // See if one of the identifiers is in the UA string.
+        foreach ($strings as $string) {
+            if (strpos($user_agent, $string) !== FALSE) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function isIgnored($uri)
+    {
+        // Strip off possible querystring
+        [$uri] = explode('?', $uri);
+
+        // Fetch endpoints to be ignored from the settings
+        $ignore = SlackErrorNotifications::$plugin->getSettings()->ignore;
+
+        $endpoints = explode("\n", $ignore);
+        foreach ($endpoints as $endpoint) {
+            $endpoint = trim($endpoint);
+
+            if ($endpoint === $uri) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
