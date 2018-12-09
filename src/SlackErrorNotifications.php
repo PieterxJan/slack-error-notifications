@@ -91,8 +91,13 @@ class SlackErrorNotifications extends Plugin
                 $page = $_SERVER['REQUEST_URI'];
 
                 $webhook = $this->getSettings()->webhook;
+                $excludeBot = (bool) $this->getSettings()->excludeBot;
 
                 if (\Craft::$app->config->getGeneral()->devMode === true) {
+                    return;
+                }
+
+                if ($excludeBot === true && self::$plugin->slackService->isBot($_SERVER['HTTP_USER_AGENT']) === true) {
                     return;
                 }
 

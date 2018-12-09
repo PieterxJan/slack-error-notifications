@@ -7,6 +7,7 @@ use craft\base\Model;
 class Settings extends Model
 {
     public $webhook = '';
+    public $excludeBot = true;
 
     public function rules()
     {

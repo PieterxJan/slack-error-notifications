@@ -5,4 +5,12 @@
     label: "Slack Webhook URL",
     name: 'webhook',
     value: settings.webhook
+}) }}}) }}
+
+{{ forms.textareaField({
+    label: "Ignore",
+    instructions: "Fill in the templates you wish to ignore (eg `/autodiscover/autodiscover.xml`). Split by new lines",
+    name: 'ignore',
+    value: settings.ignore,
+    rows: 10
 }) }}

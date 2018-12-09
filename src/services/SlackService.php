@@ -96,4 +96,28 @@ class SlackService extends Component
         $response = curl_exec($ch);
         curl_close($ch);
     }
+
+    public function isBot($user_agent)
+    {
+        $user_agent = strtolower($user_agent);
+
+        $strings = [
+            'bot',
+            'slurp',
+            'crawler',
+            'spider',
+            'curl',
+            'facebook',
+            'fetch',
+        ];
+
+        // See if one of the identifiers is in the UA string.
+        foreach ($strings as $string) {
+            if (strpos($user_agent, $string) !== FALSE) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
