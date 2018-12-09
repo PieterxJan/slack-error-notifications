@@ -5,7 +5,13 @@
     label: "Slack Webhook URL",
     name: 'webhook',
     value: settings.webhook
-}) }}}) }}
+}) }}
+
+{{ forms.checkboxField({
+    label: "Exclude search bots",
+    name: 'excludeBot',
+    checked: settings.excludeBot ? true : false
+}) }}
 
 {{ forms.textareaField({
     label: "Ignore",
