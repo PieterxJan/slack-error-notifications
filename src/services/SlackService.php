@@ -124,7 +124,7 @@ class SlackService extends Component
     public function isIgnored($uri)
     {
         // Strip off possible querystring
-        [$uri] = explode('?', $uri);
+        list($uri) = explode('?', $uri);
 
         // Fetch endpoints to be ignored from the settings
         $ignore = SlackErrorNotifications::$plugin->getSettings()->ignore;
