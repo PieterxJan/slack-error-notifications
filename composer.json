@@ -2,7 +2,7 @@
     "name": "pieterxjan/slack-error-notifications",
     "description": "A Craft CMS plugin used to log error in your Craft website to a channel on Slack",
     "type": "craft-plugin",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "keywords": [
         "craft",
         "cms",
