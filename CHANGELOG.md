@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.5] - 2020-08-19
+
+### Fixed
+
+- Use list instead of normal array brackets
+
 ## [1.0.4] - 2018-12-09
 
 ### Added
